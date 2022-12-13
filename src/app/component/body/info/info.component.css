@@ -1,0 +1,56 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image-1 {
+  background-image: url('/assets/img/icon-img/icon-1.png');
+  background-size: cover;
+  background-color: orange;
+  border-radius: 3px;
+}
+.example-header-image-2 {
+  background-image: url('/assets/img/icon-img/icon-8.png');
+  background-size: cover;
+  background-color: orange;
+  border-radius: 3px;
+}
+.example-header-image-3 {
+  background-image: url('/assets/img/icon-img/icon-3.png');
+  background-size: cover;
+  background-color: orange;
+  border-radius: 3px;
+}
+.example-header-image-4 {
+  background-image: url('/assets/img/icon-img/icon-10.png');
+  background-size: cover;
+  background-color: orange;
+  border-radius: 3px;
+}
+
+
+.example-header-image-5 {
+  background-image: url('/assets/img/icon-img/icon-9.png');
+  background-size: cover;
+  background-color: orange;
+  border-radius: 3px;
+}
+.example-header-image-6 {
+  background-image: url('/assets/img/icon-img/icon-6.png');
+  background-size: cover;
+  background-color: orange;
+  border-radius: 3px;
+}
+
+.example-header-image-7 {
+  background-image: url('/assets/img/icon-img/icon-7.png');
+  background-size: cover;
+  background-color: orange;
+  border-radius: 3px;
+}
+
+
+mat-card {
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+}
+

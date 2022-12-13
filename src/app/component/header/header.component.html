@@ -1,0 +1,72 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+    <mat-toolbar  class="example-toolbar">
+        <mat-toolbar-row>
+            <button mat-icon-button>
+                <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+            </button>
+            <span class="example-spacer"></span>
+
+            <button mat-button style="margin-right: 5px;">
+                <mat-icon>person_add</mat-icon>
+                Registrarse
+            </button>
+
+            <button mat-button>
+                <mat-icon>login</mat-icon>
+                Iniciar sesión
+            </button>
+
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <mat-nav-list>
+                <mat-list-item style="margin-bottom:20px ; margin-top: 20px;">
+                    <img class="img-sidenav" src="assets/img/psiconit-img.png">
+                </mat-list-item>
+
+                <h3 mat-subheader>Home</h3>
+
+
+                <a mat-list-item routerLink="/info" routerLinkActive="activo">
+                    <mat-icon>home_filled</mat-icon>
+                    Psiconit
+                </a>
+
+
+                <mat-list-item>
+                    <a>
+                        <mat-icon>medical_services</mat-icon>
+                        Tratamiento
+                    </a>
+                </mat-list-item>
+
+                <mat-list-item>
+                    <a>
+                        <mat-icon>people</mat-icon>
+                        Usuarios
+                    </a>
+                </mat-list-item>
+
+
+                <a mat-list-item routerLink="/vr" routerLinkActive="activo">
+                    <i class="fa-solid fa-vr-cardboard mat-icon"></i>
+                    Realidad virtual
+                </a>
+
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <!-- CONTENT -->
+        <mat-sidenav-content>
+            <div class="container-fluid">
+                <!-- <app-info></app-info> -->
+                <router-outlet></router-outlet>
+            </div>
+
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
