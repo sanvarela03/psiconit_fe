@@ -20,6 +20,8 @@ import { InfoComponent } from './component/body/info/info.component';
 import { RealidadVirtualComponent } from './component/body/realidad-virtual/realidad-virtual.component';
 import { ActividadesComponent } from './component/body/realidad-virtual/actividades/actividades.component';
 import { RehacvComponent } from './component/body/realidad-virtual/rehacv/rehacv.component';
+import { TratamientoComponent } from './component/body/tratamiento/tratamiento.component';
+import { ProcesosCognitivosComponent } from './component/body/tratamiento/procesos-cognitivos/procesos-cognitivos.component';
 
 
 
@@ -31,7 +33,9 @@ import { RehacvComponent } from './component/body/realidad-virtual/rehacv/rehacv
     InfoComponent,
     RealidadVirtualComponent,
     ActividadesComponent,
-    RehacvComponent
+    RehacvComponent,
+    TratamientoComponent,
+    ProcesosCognitivosComponent
   ],
   imports: [
     BrowserModule,
