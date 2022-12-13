@@ -1,0 +1,37 @@
+h1 {
+  text-align: center;
+}
+
+.mat-card-vr-box {
+  max-width: 60%;
+  min-width: 50%;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.mat-card-info {
+  margin: 10px 0px 0px 0px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mat-button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  background-color: #FFBB6B;
+}
+
+.shadow{
+    box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
