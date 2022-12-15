@@ -1,0 +1,60 @@
+<h1 mat-dialog-title>CUADRO MNESICO</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+    <h2>Memoria</h2>
+    <mat-icon>flag_circle</mat-icon>
+    <h3>Objetivo</h3>
+    <p>
+        Fomentar la mejora de la memoria a corto plazo y la atención del menor con la ayuda de la actividad cuadro
+        mnésico.
+    </p>
+
+    <mat-icon>receipt_long</mat-icon>
+    <h3>Instrucciones</h3>
+
+    <p>
+        Se inicia mostrando al niño la primera plantilla de aplicación. Se debe ubicar justo frente a él.
+        Se le indica que debe observar atentamente cada una de las prendas de vestir que se encuentran allí, pues,
+        posteriormente se le entregara otra lamina donde harán falta algunas.
+        Es importante que el niño diga en voz alta el nombre de cada una de las prendas, para que el examinador este al
+        tanto de como las reconoce, igualmente puede solicitar que tenga presente el número total de objetos.
+        Luego se retira la primera plantilla y se deja frente al niño la segunda, junto a la pregunta: ¿Cuáles prendas
+        hacen falta?
+        Cuando las diga todas o no recuerde más, se muestra nuevamente la primera plantilla.
+    </p>
+
+    <mat-icon>timer</mat-icon>
+    <h3>Tiempo</h3>
+    <p>
+        Puede observar la primera plantilla 20 segundos. La evocación en la segunda no tiene un límite fijo, sin
+        embargo, se espera un promedio de 1 minuto.
+    </p>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+
+            <div class="col-md-8 shadow">
+                <img src="assets/img/infiltrado.png">
+                <img src="assets/img/infiltrado.png">
+            </div>
+
+
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

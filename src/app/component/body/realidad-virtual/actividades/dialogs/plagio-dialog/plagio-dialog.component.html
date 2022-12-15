@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>PLAGIO</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+    <h2>Flexibilidad cognitiva</h2>
+    <mat-icon>flag_circle</mat-icon>
+    <h3>Objetivo</h3>
+    <p>
+        Efectuar estimulación de la atención, memoria y la velocidad de procesamiento través de la actividad plagio del
+        programa Psiconit.
+    </p>
+
+    <mat-icon>receipt_long</mat-icon>
+    <h3>Instrucciones</h3>
+
+    <p>
+        Se inicia mostrando al niño la plantilla de aplicación. Se debe ubicar justo frente a él.
+        Se le indica que en la parte izquierda de la plantilla encontrará una imagen o ilustración, su tarea consistirá
+        en buscar esa misma, en el conjunto de imágenes de la derecha y posteriormente encerrarla en un círculo.
+    </p>
+
+    <mat-icon>timer</mat-icon>
+
+    <mat-icon>assignment_late</mat-icon>
+    <h3>Nota</h3>
+    <p>
+        Se usa la parte superior en la imágen como ejemplo.
+    </p>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+
+            <div class="col-md-8 shadow">
+                <img src="assets/img/infiltrado.png">
+                <img src="assets/img/infiltrado.png">
+            </div>
+
+
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

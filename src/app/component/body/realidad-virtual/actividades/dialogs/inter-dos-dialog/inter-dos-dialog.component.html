@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>INTER - DOS</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+    <h2>Flexibilidad cognitiva</h2>
+    <mat-icon>flag_circle</mat-icon>
+    <h3>Objetivo</h3>
+    <p>
+        Trabajar las habilidades cognitivas: inhibición, atención, memoria y flexibilidad a través de la actividad
+        inter-dos.
+    </p>
+
+    <mat-icon>receipt_long</mat-icon>
+    <h3>Instrucciones</h3>
+
+    <p>
+        Se inicia mostrando al niño los palitos de colores. Se debe ubicar justo frente a él. Se solicita que nombre los
+        colores de los palitos (azul, amarillo, naranja, rosado, verde y rojo).
+        Posteriormente se explica que el examinador leerá un listado con los colores anteriormente mencionados. El niño
+        deberá estar atento a cada llamada, dado que, cada vez que nombren un color, tendrá que sacarlo y dejarlo sobre
+        la mesa.
+        Los colores amarillo, naranja, verde y rojo mantendrán su misma tonalidad, pero el azul y rosado no, pues cuando
+        se nombre el color azul, el niño deberá sacar el color rosado y cuando se nombre el color rosado sacara el azul
+        (esto se explica antes de iniciar el ejercicio).
+    </p>
+
+    <mat-icon>timer</mat-icon>
+    <h3>Tiempo</h3>
+    <p>
+        No tiene limite de tiempo. Solo se escribe en la hoja del examinador la duración total. 
+    </p>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+
+            <div class="col-md-8 shadow">
+                <img src="assets/img/infiltrado.png">
+                <img src="assets/img/infiltrado.png">
+            </div>
+
+
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

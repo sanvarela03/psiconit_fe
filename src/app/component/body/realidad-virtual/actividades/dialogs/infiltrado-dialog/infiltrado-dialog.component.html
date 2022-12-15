@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>EL INFILTRADO</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+    <h2>Flexibilidad cognitiva</h2>
+    <mat-icon>flag_circle</mat-icon>
+    <h3>Objetivo</h3>
+    <p>
+        Optimizar el funcionamiento de la inhibición y la atención con la ayuda de la actividad el infiltrado.
+    </p>
+
+    <mat-icon>receipt_long</mat-icon>
+    <h3>Instrucciones</h3>
+
+    <p>
+        Se inicia mostrando al niño la plantilla de aplicaciones. Se debe ubicar justo frente a él.
+        Se le indica que por cada línea hay tres palabras, dos de ellas son iguales, pero hay una tercera que esta
+        infiltrada. Su trabajo será hallar la palabra que no pertenece a la línea y subrayarla lo más rápido posible.
+
+        SOL SOL SAL El examinador realiza la primera línea como ejemplo.
+        VEN VAN VEN
+    </p>
+
+    <mat-icon>timer</mat-icon>
+    <h3>Tiempo</h3>
+    <p>
+        Se dispondrá de 3 minutos para subrayar las 42 palabras. Si el niño no logra realizarlos todos, igual se le
+        retira la plantilla.
+    </p>
+
+    <mat-icon>assignment_late</mat-icon>
+    <h3>Nota</h3>
+    <p>
+        Previo a darle el aviso de inicio, se deberá aclarar que apenas termine la primera columna de palabras se debe
+        continuar en la siguiente.
+    </p>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+
+            <div class="col-md-8 shadow">
+                <img  src="assets/img/infiltrado.png">
+                <img  src="assets/img/infiltrado.png">
+            </div>
+
+
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>
+

@@ -1,0 +1,14 @@
+.mat-card {
+  margin-top: 20px;
+  width: auto;
+}
+
+.mat-card:hover{
+  background-color: rgba(128, 128, 128, 0.141);
+}
+.mat-card-image {
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  margin-left: 2px;
+}

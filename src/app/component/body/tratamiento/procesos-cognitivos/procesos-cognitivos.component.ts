@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./procesos-cognitivos.component.css']
 })
 export class ProcesosCognitivosComponent implements OnInit {
-
+  panelOpenState = false;
+  
   constructor() { }
 
   ngOnInit(): void {

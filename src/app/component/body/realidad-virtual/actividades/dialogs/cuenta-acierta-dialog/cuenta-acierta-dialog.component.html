@@ -1,0 +1,62 @@
+<h1 mat-dialog-title>CUENTA Y ACIERTA (FIGURAS)</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+    <h2>Velocidad de procesamiento</h2>
+    <mat-icon>flag_circle</mat-icon>
+    <h3>Objetivo</h3>
+    <p>
+        Beneficiar el correcto funcionamiento del cálculo numérico y la velocidad de procesamiento por medio de la
+        actividad cuenta y acierta (figura) del programa psiconit.
+    </p>
+
+    <mat-icon>receipt_long</mat-icon>
+    <h3>Instrucciones</h3>
+
+    <p>
+        Se inicia mostrando al niño la plantilla de aplicación. Se debe ubicar justo frente a él.
+        Cada cuadrado contiene un conjunto de objetivo; en la parte inferior se encuentra la cantidad exacta de objetos,
+        acompaña de posibles respuestas, por lo cual, el niño deberá contar todas las piezas y encerrar en un circulo la
+        respuesta correcta
+    </p>
+
+    <mat-icon>timer</mat-icon>
+    <h3>Tiempo</h3>
+    <p>
+        No tiene limite de tiempo, pero se aclara que debe hacerlo lo más rápido posible. Solo se escribe en la hoja del
+        examinador la duración total.
+    </p>
+
+    <mat-icon>assignment_late</mat-icon>
+    <h3>Nota</h3>
+    <p>
+        El examinador debe esperar hasta que el niño resuelva todas las operaciones; luego procederá a realizar la
+        respectiva verificación, con el fin de corregir y guiar al niño en caso de que se haya equivocado.
+    </p>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+
+            <div class="col-md-8 shadow">
+                <img src="assets/img/infiltrado.png">
+                <img src="assets/img/infiltrado.png">
+            </div>
+
+
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

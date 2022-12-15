@@ -1,0 +1,59 @@
+<h1 mat-dialog-title>ALFABETO</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+    <h2>Velocidad de procesamiento</h2>
+    <mat-icon>flag_circle</mat-icon>
+    <h3>Objetivo</h3>
+    <p>
+        Causar el trabajo de las habilidades cognitivas: retención, velocidad de procesamiento y lenguaje fonológico por
+        medio de la actividad alfabeto.
+    </p>
+
+    <mat-icon>receipt_long</mat-icon>
+    <h3>Instrucciones</h3>
+
+    <p>
+        Se le pregunta al niño cual es la primera palabra del abecedario, cuando responda “A” se le indaga por una
+        palabra que inicie con esa letra, si el niño no responde rápidamente el examinador da el ejemplo (solo una
+        palabra):
+        “A”: Abeja, Arroz, Araña
+        Apenas el niño comprenda la mecánica del ejercicio, se ubica frente a el la plantilla de aplicación y se le da
+        la instrucción de hacer lo mismo con cada palabra del abecedario en orden A-B-B-D…X-Y-Z, pero sin repetir la
+        palabra del ejemplo.
+
+    </p>
+
+    <mat-icon>timer</mat-icon>
+    <h3>Tiempo</h3>
+    <p>
+        No tiene limite de tiempo. Solo se escribe en la hoja del examinador la duración total.
+    </p>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+
+            <div class="col-md-8 shadow">
+                <img src="assets/img/infiltrado.png">
+                <img src="assets/img/infiltrado.png">
+            </div>
+
+
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

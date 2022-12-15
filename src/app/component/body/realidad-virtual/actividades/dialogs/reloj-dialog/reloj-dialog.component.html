@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>RELOJ</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+    <h2>Toma de decisiones</h2>
+    <mat-icon>flag_circle</mat-icon>
+    <h3>Objetivo</h3>
+    <p>
+        Estimular a través de la actividad reloj las habilidad de toma de decisiones.
+    </p>
+
+    <mat-icon>receipt_long</mat-icon>
+    <h3>Instrucciones</h3>
+
+    <p>
+        Esta actividad se encuentra en formato Microsoft Power Point y esta ubicado en el Cd que acompaña el programa.
+        Se deberá presionar la tecla F5 o dar clic en la tecla presentación con diapositivas desde la primera
+        diapositiva, una vez hecho esto la pantalla quedará en fondo blanco.
+        Luego se ubicará al niño frente al computador donde se encuentre la presentación (no demasiado cerca para
+        ampliar el campo visual) y se le dará la siguiente instrucción: en la pantalla saldrá un reloj, algunos con la
+        hora exacta (1:00) y otros con minutos (5:30), el ejercicio será decir “Clock” cada vez que aparezca un reloj
+        con hora exacta y “Click” cuando el reloj aparezca con minutos.
+        Las primeras 2 diapositivas avanzan automáticamente, y servirán como ejemplo para comprender mejor la
+        instrucción
+
+    </p>
+
+
+    <mat-icon>assignment_late</mat-icon>
+    <h3>Nota</h3>
+    <p>
+        La hoja guía contiene los segundos exactos en los cuales el niño deberá decir “Clock” y “Click”. Tenga en cuenta
+        que hay cambios en la velocidad de aparición de las imágenes.
+    </p>
+    <br>
+    <mat-icon>timer</mat-icon>
+    <h3>Tiempo</h3>
+    <p>
+        Automático 40 segundos. 
+    </p>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+
+            <div class="col-md-8 shadow">
+                <img src="assets/img/infiltrado.png">
+                <img src="assets/img/infiltrado.png">
+            </div>
+
+
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

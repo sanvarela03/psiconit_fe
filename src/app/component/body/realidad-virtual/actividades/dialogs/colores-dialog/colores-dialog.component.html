@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>COLORES INVERTIDOS</h1>
+<mat-divider></mat-divider>
+<br>
+<mat-dialog-content class="mat-typography">
+    <h2>Inhibición</h2>
+    <mat-icon>flag_circle</mat-icon>
+    <h3>Objetivo</h3>
+    <p>
+        Proveer herramientas con la actividad colores invertidos para trabajar la inhibición, velocidad de
+        procesamiento, atención y flexibilidad.
+    </p>
+
+    <mat-icon>receipt_long</mat-icon>
+    <h3>Instrucciones</h3>
+
+    <p>
+        Se inicia mostrando al niño la plantilla de aplicación. Se debe ubicar justo frente a él.
+        Se le señala al niño el primer circulo y se le pregunta de que color es, el deberá responder “amarillo”, luego
+        que palabra esta escrita dentro del círculo, a lo cual deberá decir “rojo” y finalmente en que color esta
+        escrita la palabra rojo, y deberá responder “azul”, justo allí se le indica que deberá decir el color en que
+        esta escrito la palabra -azul- en cada uno de los círculos siguientes, lo más rápido posible.
+
+    </p>
+    <mat-icon>assignment_late</mat-icon>
+    <h3>Modelo</h3>
+
+    <p>
+        Tenga en cuenta los siguientes ejemplos.
+        El niño deberá decir el color en negrita.
+        Esto se corrobora con la hoja guía, donde se encuentra el listado en consecutivo de los colores, con el fin de
+        detectar los errores.
+
+    </p>
+
+    <mat-icon>timer</mat-icon>
+    <h3>Tiempo</h3>
+    <p>
+        No tiene limite de tiempo. Solo se escribe en la hoja del examinador la duración total.
+    </p>
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+
+            <div class="col-md-8 shadow">
+                <img src="assets/img/infiltrado.png">
+                <img src="assets/img/infiltrado.png">
+            </div>
+
+
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

@@ -1,0 +1,23 @@
+.mat-card-avatar{
+  width: 40%;
+  height: 40%;
+  border-radius: 5px;
+}
+
+.mat-card{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 991px) {
+  .mat-card{
+    width:100%;   
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .mat-card{
+    margin-left: 0px;
+  }
+}

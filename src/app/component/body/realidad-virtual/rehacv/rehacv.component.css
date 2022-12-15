@@ -15,11 +15,7 @@ h1 {
 
 .mat-card-info {
   margin: 10px 0px 0px 0px;
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
+
 }
 
 .mat-button {
@@ -34,4 +30,21 @@ h1 {
     border-radius: 4px;
     margin-left: 3px;
     margin-right: 3px;
+}
+
+@media screen and (min-width: 991px) {
+  .mat-card{
+    width:100%; 
+    height:min-content;  
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .mat-card{
+    margin-left: 0px;
+  }
+}
+.mat-card-content{
+  text-align: justify;
+  
 }

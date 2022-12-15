@@ -1,20 +1,22 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
 
-    <mat-toolbar  class="example-toolbar">
+    <mat-toolbar class="example-toolbar">
         <mat-toolbar-row>
-            <button mat-icon-button>
-                <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+            <button mat-icon-button (click)="sidenav.toggle();" style="padding-left: 8px;">
+                <mat-icon>menu</mat-icon>
             </button>
             <span class="example-spacer"></span>
 
             <button mat-button style="margin-right: 5px;">
                 <mat-icon>person_add</mat-icon>
-                Registrarse
+                <span class="responsive-1">
+                    Registrarse
+                </span>
             </button>
 
             <button mat-button>
                 <mat-icon>login</mat-icon>
-                Iniciar sesión
+                <span class="responsive-1"> Iniciar sesión</span>
             </button>
 
         </mat-toolbar-row>
@@ -24,49 +26,128 @@
         <mat-sidenav #sidenav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
             fixedTopGap="56">
             <mat-nav-list>
-                <mat-list-item style="margin-bottom:20px ; margin-top: 20px;">
-                    <img class="img-sidenav" src="assets/img/psiconit-img.png">
+                <mat-list-item style="margin-bottom:20px ; margin-top: 20px; padding-left: 30px;">
+                    <a routerLink="/info">
+                        <img class="img-sidenav" src="assets/img/psiconit-img.png">
+                    </a>
                 </mat-list-item>
 
                 <h3 mat-subheader>Home</h3>
 
+                <!--................................PSICONIT...............................-->
 
-                <a mat-list-item routerLink="/info" routerLinkActive="activo">
-                    <mat-icon>home_filled</mat-icon>
-                    Psiconit
-                </a>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>home_filled</mat-icon>
+                            Psiconit
+                        </mat-panel-title>
+                        <mat-panel-description>
 
-                <mat-list-item>
-                    <a>
-                        <mat-icon>medical_services</mat-icon>
-                        Tratamiento
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item routerLink="/info"  routerLinkActive="activo">
+                        <mat-icon>question_mark</mat-icon>
+                        ¿Qué es?
                     </a>
-                </mat-list-item>
-
-                <mat-list-item>
-                    <a>
-                        <mat-icon>people</mat-icon>
-                        Usuarios
+                    <a mat-list-item href="/info#id-como-funciona" routerLinkActive="activo">
+                        <i class="fa-solid fa-gears mat-icon"></i>
+                        ¿Cómo funciona?
                     </a>
-                </mat-list-item>
+
+                    <a mat-list-item href="/info#id-a-quien" routerLinkActive="activo">
+                        <i class="fa-solid fa-person-circle-question mat-icon"></i>
+                        ¿A quién va dirigido?
+                    </a>
+                </mat-expansion-panel>
 
 
+                <!--................................TRATAMIENTO...............................-->
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>medical_services</mat-icon>
+                            Tratamiento
+                        </mat-panel-title>
+                        <mat-panel-description>
+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item routerLink="/trat-procesos-cog" routerLinkActive="activo">
+                        <mat-icon>psychology</mat-icon>
+                        Procesos cognitivos
+                    </a>
+                    <a mat-list-item routerLink="/trat-act" routerLinkActive="activo">
+                        <mat-icon>videogame_asset</mat-icon>
+                        Actividades
+                    </a>
+                </mat-expansion-panel>
+
+
+
+                <!--................................USUARIOS...............................-->
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>people</mat-icon>
+                            Usuarios
+                        </mat-panel-title>
+                        <mat-panel-description>
+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item routerLink="#" routerLinkActive="activo">
+                        <mat-icon>table_chart</mat-icon>
+                        Tabla
+                    </a>
+                </mat-expansion-panel>
+
+
+
+                <!--
                 <a mat-list-item routerLink="/vr" routerLinkActive="activo">
                     <i class="fa-solid fa-vr-cardboard mat-icon"></i>
                     Realidad virtual
                 </a>
+-->
+                <!--................................REALIDAD VIRTUAL...............................-->
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <i class="fa-solid fa-vr-cardboard mat-icon"></i>
+                            Realidad virtual
+                        </mat-panel-title>
+                        <mat-panel-description>
+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <a mat-list-item routerLink="/vr-rehacv" routerLinkActive="activo">
+                        <mat-icon>view_in_ar</mat-icon>
+                        REHACV
+                    </a>
+                    <a mat-list-item routerLink="/vr-act" routerLinkActive="activo">
+                        <mat-icon>sports_esports</mat-icon>
+                        Actividades
+                    </a>
+                </mat-expansion-panel>
+
+
 
             </mat-nav-list>
+
         </mat-sidenav>
 
         <!-- CONTENT -->
         <mat-sidenav-content>
             <div class="container-fluid">
-                <!-- <app-info></app-info> -->
-                
-                <!--<router-outlet></router-outlet>-->
-                <app-procesos-cognitivos></app-procesos-cognitivos>
-              <!--<app-rehacv></app-rehacv>--> 
+
+
+                <router-outlet></router-outlet>
+                <app-footer></app-footer>
+                <!--<app-rehacv></app-rehacv>-->
             </div>
 
         </mat-sidenav-content>
