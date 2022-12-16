@@ -1,0 +1,47 @@
+commit 0a1398447e3df6ea71dd285e604d9d8196c43ab4 (HEAD -> expansion-panel)
+Author: Santiago Varela Daza <svarela03@uan.edu.co>
+Date:   Wed Dec 14 21:18:53 2022 -0500
+
+    #7 responsive+dialogs+bookmarks
+
+commit 14fc950c3cd942fc56ace5d3826a6cdf7d14e49f (tratamiento)
+Author: Santiago Varela Daza <svarela03@uan.edu.co>
+Date:   Tue Dec 13 14:54:07 2022 -0500
+
+    #6 Agregar contenido estatico de tratamiento
+
+commit 6b4eb0734422f6ecb3dc27986e01abdba48538e8 (rehacv)
+Author: Santiago Varela Daza <svarela03@uan.edu.co>
+Date:   Tue Dec 13 12:36:51 2022 -0500
+
+    #5 Agregado el contenido estatico de rehacv
+
+commit 8b90bacc78497da7423323bbe9b8fe0dcbc79450 (vr-refactor)
+Author: Santiago Varela Daza <svarela03@uan.edu.co>
+Date:   Tue Dec 13 10:43:57 2022 -0500
+
+    #4 Refactorizar realidad-virtual-component
+
+commit 33e31486183716bae3da37d4afd4976c4d0a9a4e (layout-setup)
+Author: Santiago Varela Daza <svarela03@uan.edu.co>
+Date:   Tue Dec 13 10:33:22 2022 -0500
+
+    #3 Agregar layout base (header footer sidenav) y rutas base
+
+commit c8eca09418cb118bcb62683b62896e0a97b8aa7b (side-nav, angular-material-setup)
+Author: Santiago Varela Daza <svarela03@uan.edu.co>
+Date:   Sat Dec 10 18:23:01 2022 -0500
+
+    #2 Agregar angular material, theme: Indigo/pink globalTypography: yes, browser animations: yes
+
+commit 42e953620ef2aec87183042350b592058991d186 (master)
+Author: Santiago Varela Daza <svarela03@uan.edu.co>
+Date:   Sat Dec 10 17:44:13 2022 -0500
+
+    #1 Codigo en blanco
+
+commit 7ecadec122b3b434834e9a714a3adea593355ad8 (prueba, angular-base-code)
+Author: Santiago Varela Daza <svarela03@uan.edu.co>
+Date:   Fri Dec 9 17:42:14 2022 -0500
+
+    initial commit

@@ -1,10 +1,11 @@
 .mat-card {
   margin-top: 20px;
   width: auto;
+  padding-top:30px;
 }
 
 .mat-card:hover{
-  background-color: rgba(128, 128, 128, 0.141);
+  background-color: rgba(232, 228, 228, 0.214);
 }
 .mat-card-image {
   width: 100%;
