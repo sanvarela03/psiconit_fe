@@ -7,16 +7,21 @@
             </button>
             <span class="example-spacer"></span>
 
-            <button mat-button style="margin-right: 5px;">
+            <button *ngIf="!IsAuthenticated" mat-button routerLink="/create-user" style="margin-right: 5px;">
                 <mat-icon>person_add</mat-icon>
                 <span class="responsive-1">
                     Registrarse
                 </span>
             </button>
 
-            <button mat-button>
+            <button *ngIf="!IsAuthenticated" mat-button routerLink="/login">
                 <mat-icon>login</mat-icon>
                 <span class="responsive-1"> Iniciar sesión</span>
+            </button>
+
+            <button *ngIf="IsAuthenticated" mat-button (click) = "logOut()" routerLink="/login">
+                <mat-icon>logout</mat-icon>
+                <span class="responsive-1"> Cerrar sesión</span>
             </button>
 
         </mat-toolbar-row>
@@ -98,7 +103,7 @@
 
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <a mat-list-item routerLink="#" routerLinkActive="activo">
+                    <a mat-list-item routerLink="/listar-usuarios" routerLinkActive="activo">
                         <mat-icon>table_chart</mat-icon>
                         Tabla
                     </a>

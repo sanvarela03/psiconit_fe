@@ -1,0 +1,45 @@
+ table {
+  width: 100%;
+  padding: 10%;
+
+
+}
+
+/* table td {
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  overflow: hidden;
+  width: 16%;
+} */
+
+/* table th {
+  vertical-align: middle;
+  text-align: center;
+}  */
+
+.mat-header-cell {
+  font-size: medium;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  /* justify-content: center;
+  font-family: 'common pixel', sans-serif; */
+}
+
+
+/* .mat-cell {
+  font-size: medium;
+  justify-content: center;
+}
+.mat-paginator {
+  font-size: medium;
+}
+
+.mat-column-password {
+ 
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+} */

@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Agregar cuenta</h1>
+<div mat-dialog-content>
+
+
+    <!-- BALANCE -->
+    <mat-form-field>
+        <input matInput placeholder="Ingresar balance" [(ngModel)]="data.balance">
+    </mat-form-field>
+
+    <!-- ESTADO DE CUENTA -->
+
+    <label id="example-radio-group-label">Seleccione el estado de cuenta</label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+        [(ngModel)]="estadoDeCuenta">
+        <mat-radio-button class="example-radio-button" *ngFor="let estado of estadosDeCuenta" [value]="estado">
+            {{estado}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <div>El estado actual de la cuenta es: {{estadoDeCuenta}}</div>
+
+    <!-- FECHA DE MODIFICACION -->
+    <mat-form-field appearance="fill">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start date">
+            <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+
+
+
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" click="setEstadoDeCuenta()" [mat-dialog-close]="data">Agregar</button>
+        <button mat-raised-button (click)="cancelar()">Cancelar</button>
+    </div>
+
+
+</div>

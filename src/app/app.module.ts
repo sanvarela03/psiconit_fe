@@ -30,7 +30,7 @@ import { ComoFuncionaComponent } from './component/body/info/como-funciona/como-
 import { AQuienComponent } from './component/body/info/a-quien/a-quien.component';
 import { InfiltradoDialogComponent } from './component/body/realidad-virtual/actividades/dialogs/infiltrado-dialog/infiltrado-dialog.component';
 import { ColoresDialogComponent } from './component/body/realidad-virtual/actividades/dialogs/colores-dialog/colores-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AlfabetoDialogComponent } from './component/body/realidad-virtual/actividades/dialogs/alfabeto-dialog/alfabeto-dialog.component';
 import { CirculosDualesDialogComponent } from './component/body/realidad-virtual/actividades/dialogs/circulos-duales-dialog/circulos-duales-dialog.component';
 import { CuentaAciertaDialogComponent } from './component/body/realidad-virtual/actividades/dialogs/cuenta-acierta-dialog/cuenta-acierta-dialog.component';
@@ -39,7 +39,26 @@ import { InterDosDialogComponent } from './component/body/realidad-virtual/activ
 import { AritmeticaVegetalesDialogComponent } from './component/body/realidad-virtual/actividades/dialogs/aritmetica-vegetales-dialog/aritmetica-vegetales-dialog.component';
 import { PlagioDialogComponent } from './component/body/realidad-virtual/actividades/dialogs/plagio-dialog/plagio-dialog.component';
 import { RelojDialogComponent } from './component/body/realidad-virtual/actividades/dialogs/reloj-dialog/reloj-dialog.component';
+import { LoginComponent } from './component/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { CreateUserComponent } from './component/create-user/create-user.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { UsuariosComponent } from './component/body/usuarios/usuarios.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { AuthInterceptor } from './helpers/auth.interceptor';
+import { UserAddComponent } from './component/body/usuarios/user-add/user-add.component';
+import { UserEditComponent } from './component/body/usuarios/user-edit/user-edit.component';
+import { MatSortModule } from '@angular/material/sort';
+import { AgregarCuentasDialogComponent } from './component/body/usuarios/user-add/dialogs/agregar-cuentas-dialog/agregar-cuentas-dialog.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +84,13 @@ import { RelojDialogComponent } from './component/body/realidad-virtual/activida
     AritmeticaVegetalesDialogComponent,
     PlagioDialogComponent,
     RelojDialogComponent,
-  
+    LoginComponent,
+    CreateUserComponent,
+    UsuariosComponent,
+    UserAddComponent,
+    UserEditComponent,
+    AgregarCuentasDialogComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -81,9 +106,28 @@ import { RelojDialogComponent } from './component/body/realidad-virtual/activida
     MatGridListModule,
     MatExpansionModule,
     MatTreeModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatProgressBarModule,
+    MatSelectModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

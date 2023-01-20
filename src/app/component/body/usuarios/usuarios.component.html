@@ -1,0 +1,64 @@
+<h1>Lista de usuarios </h1>
+
+<mat-divider></mat-divider>
+<br>
+<div class="mat-elevation-z8 table-responsive">
+
+    <table mat-table matSort [dataSource]="users">
+        <!-- Columna id -->
+        <ng-container matColumnDef="id">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <!-- Columna username -->
+        <ng-container matColumnDef="username">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> Usuario </th>
+            <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+        </ng-container>
+        <!-- Columna password -->
+        <ng-container matColumnDef="password">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef fxFlex="50"> Contraseña </th>
+            <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+        </ng-container>
+        <!-- Columna name -->
+        <ng-container matColumnDef="name">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <!-- Columna email -->
+        <ng-container matColumnDef="email">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> Correo </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        <!-- Columna id_account -->
+        <ng-container matColumnDef="account">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef> id_cuenta </th>
+            <td mat-cell *matCellDef="let element"> {{element.account}} </td>
+        </ng-container>
+        <!-- Columna de acciones -->
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef style="text-align: right;">
+                <button mat-icon-button (click)="agregar()">
+                    <mat-icon aria-label="Agregar" aria-hidden="false">add</mat-icon>
+                </button>
+            </th>
+            <td mat-cell *matCellDef="let element" style="text-align: right;">
+                <button mat-icon-button (click)="editar(element)">
+                    <mat-icon aria-label="Edit">edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="borrar(element)">
+                    <mat-icon aria-label="Delete">delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+
+
+        <!-- ROWs -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+</mat-paginator>
