@@ -43,6 +43,8 @@ export class UsuariosComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    
+   
 
     const token = this.securityService.getAccessToken();
     console.log("El token es -> : " + token);

@@ -8,10 +8,7 @@ import { SecurityService } from './security.service';
 })
 export class DataService {
 
-  constructor(
-    private http: HttpClient,
-    private securityService: SecurityService
-  ) { }
+  constructor(private http: HttpClient) { }
 
   /* HTTP GET */
 

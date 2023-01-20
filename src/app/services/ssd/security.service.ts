@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { DataService } from './data.service';
 import { SessionStorageService } from './session-storage.service';
+import { IRefresh } from '../../models/irefresh';
+import { IAccess } from '../../models/iaccess';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +13,10 @@ export class SecurityService {
   private authSource = new Subject<boolean>();
   authChallenge$ = this.authSource.asObservable();
 
-  constructor(private sessionStorageService: SessionStorageService) {
+  constructor(
+    private sessionStorageService: SessionStorageService,
+    private dataService: DataService
+  ) {
     if (this.sessionStorageService.retrieve('IsAuthorized') !== '') {
       this.IsAuthorized = this.sessionStorageService.retrieve('IsAuthorized');
       this.authSource.next(this.IsAuthorized);
@@ -18,6 +24,7 @@ export class SecurityService {
   }
 
   public getAccessToken(): any {
+    
     return this.sessionStorageService.retrieve('access_token_key');
   }
 
@@ -33,7 +40,7 @@ export class SecurityService {
     this.sessionStorageService.store('refresh_token_key', refresh_token);
   }
 
-  public getRefreshToken() {
+  public getRefreshToken() : string {
     return this.sessionStorageService.retrieve('refresh_token_key')
   }
 
@@ -50,8 +57,14 @@ export class SecurityService {
     this.resetAuthData();
     this.authSource.next(false)
   }
-  public doRefreshToken() {
 
+  public verifyToken() {
+    const URL = "http://localhost:8000/api/refresh/";
+    let iRefresh: IRefresh = {
+      refresh: this.getRefreshToken()
+    };
+
+    return this.dataService.post<IAccess>(URL, iRefresh)
   }
 
   public resetAuthData() {
