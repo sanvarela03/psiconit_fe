@@ -1,41 +1,43 @@
-<h1 mat-dialog-title>Agregar cuenta</h1>
-<div mat-dialog-content>
+<h1 mat-dialog-title>{{data_passed.titulo}}</h1>
+<mat-card>
+    <!-- <mat-card-header>Agregar</mat-card-header>
+    <mat-card-subtitle>Cuenta</mat-card-subtitle> -->
 
+    <mat-card-content>
+        <form [formGroup]="formAgregarCuenta">
+            <!-- BALANCE -->
+            <mat-form-field>
+                <input matInput placeholder="Ingresar balance" formControlName="balance">
+            </mat-form-field>
 
-    <!-- BALANCE -->
-    <mat-form-field>
-        <input matInput placeholder="Ingresar balance" [(ngModel)]="data.balance">
-    </mat-form-field>
+            <!-- ESTADO DE CUENTA -->
+            <label id="example-radio-group-label">Seleccione el estado de cuenta</label>
 
-    <!-- ESTADO DE CUENTA -->
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                formControlName="estado">
+                <mat-radio-button class="example-radio-button" *ngFor="let estado of estadosDeCuenta" [value]="estado">
+                    {{estado}}
+                </mat-radio-button>
+            </mat-radio-group>
 
-    <label id="example-radio-group-label">Seleccione el estado de cuenta</label>
-    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-        [(ngModel)]="estadoDeCuenta">
-        <mat-radio-button class="example-radio-button" *ngFor="let estado of estadosDeCuenta" [value]="estado">
-            {{estado}}
-        </mat-radio-button>
-    </mat-radio-group>
-    <div>El estado actual de la cuenta es: {{estadoDeCuenta}}</div>
+            <!-- <div>El estado actual de la cuenta es: {{nueva_cuenta.isActive}}</div> -->
 
-    <!-- FECHA DE MODIFICACION -->
-    <mat-form-field appearance="fill">
-        <mat-label>Enter a date range</mat-label>
-        <mat-date-range-input [rangePicker]="picker">
-            <input matStartDate placeholder="Start date">
-            <input matEndDate placeholder="End date">
-        </mat-date-range-input>
-        <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-date-range-picker #picker></mat-date-range-picker>
-    </mat-form-field>
+            <!-- FECHA DE MODIFICACION -->
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="fecha">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
 
+            <!-- BOTONES -->
+            <div mat-dialog-actions>
+                <button mat-raised-button color="primary" (click)="enviarDatos()">Agregar</button>
+                <button mat-raised-button (click)="cancelar()">Cancelar</button>
+            </div>
+        </form>
 
+    </mat-card-content>
 
-    <div mat-dialog-actions>
-        <button mat-raised-button color="primary" click="setEstadoDeCuenta()" [mat-dialog-close]="data">Agregar</button>
-        <button mat-raised-button (click)="cancelar()">Cancelar</button>
-    </div>
-
-
-</div>
+</mat-card>

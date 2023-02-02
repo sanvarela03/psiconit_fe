@@ -12,6 +12,7 @@ export class SecurityService {
   IsAuthorized: any;
   private authSource = new Subject<boolean>();
   authChallenge$ = this.authSource.asObservable();
+  URL_REFRESH = "http://localhost:8000/api/auth/refresh/";
 
   constructor(
     private sessionStorageService: SessionStorageService,
@@ -59,12 +60,12 @@ export class SecurityService {
   }
 
   public verifyToken() {
-    const URL = "http://localhost:8000/api/refresh/";
+    
     let iRefresh: IRefresh = {
       refresh: this.getRefreshToken()
     };
 
-    return this.dataService.post<IAccess>(URL, iRefresh)
+    return this.dataService.post<IAccess>(this.URL_REFRESH, iRefresh)
   }
 
   public resetAuthData() {

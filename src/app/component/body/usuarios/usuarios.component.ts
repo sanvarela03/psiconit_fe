@@ -22,7 +22,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator | null = null;
   @ViewChild(MatSort, { static: true }) sort: MatSort | null = null;
 
-  users = new MatTableDataSource<IUser>();
+  users = new MatTableDataSource();
 
   subRef$: Subscription = new Subscription();
   displayedColumns: string[] = [
@@ -31,7 +31,6 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     'name',
     'email',
     'account',
-    'password',
     'actions'
   ];
   constructor(
@@ -54,6 +53,8 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     this.subRef$ = this.dataService.get<IUser[]>(url).subscribe(
       res => {
         this.users.data = res.body!;
+
+        console.log("DATOS USUARIOS: ", this.users.data);
         this.users.paginator = this.paginator
         this.users.sort = this.sort;
       }
@@ -73,7 +74,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
   }
   editar(e: any) {
     console.log('Fila editar:', e);
-    this.router.navigate(['/edit-usuario', e.id])
+    this.router.navigate(['/edit-usuario', e.username])
   }
 
   borrar(e: any) {

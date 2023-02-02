@@ -50,6 +50,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { UsuariosComponent } from './component/body/usuarios/usuarios.component';
 import { MatTableModule } from '@angular/material/table';
+
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AuthInterceptor } from './helpers/auth.interceptor';
 import { UserAddComponent } from './component/body/usuarios/user-add/user-add.component';
@@ -59,6 +60,7 @@ import { AgregarCuentasDialogComponent } from './component/body/usuarios/user-ad
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -126,7 +128,8 @@ import { MatNativeDateModule } from '@angular/material/core';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

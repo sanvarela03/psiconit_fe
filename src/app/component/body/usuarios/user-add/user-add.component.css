@@ -1,11 +1,57 @@
-.mat-form-field{
-    width: 100%;
+.mat-form-field {
+  width: 100%;
 }
 
-form{
-    padding: 3%;
+form {
+  padding: 3%;
+}
+
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: center;
 }
 
 .toolbar-spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* set the width of the parent container */
+  height: 100%; /* set the height of the parent container */
+}
+
+.child {
+  width: 50%; /* set the width of the child div */
+  height: 50%; /* set the height of the child div */
+}
+
+@media screen and (max-width: 600px) {
+  .center-hv {
+    top: 40%;
+    left: 40%;
+  }
+}
+
+.table-container {
+  max-height: 250px;
+  overflow: auto;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 8px;
+}
+
+.basic-container {
+  padding: 30px;
 }

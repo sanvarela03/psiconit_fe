@@ -10,8 +10,7 @@ export class AuthGuard implements CanActivate {
         private securityService : SecurityService
     ){}
 
-    canActivate(){
-        this.securityService.verifyToken();
+    canActivate(){   
         if(this.securityService.IsAuthorized){
             return true;
         }

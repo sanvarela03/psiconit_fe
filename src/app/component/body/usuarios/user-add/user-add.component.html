@@ -1,19 +1,20 @@
 <mat-card>
+    <mat-icon style="font-size: 50px; margin-left: 5px;" aria-hidden="false"
+        aria-label="Agregar Cliente">person_add</mat-icon>
     <mat-card-header>
-        <mat-card-title>Nuevo</mat-card-title>
-        <mat-card-subtitle>Usuario</mat-card-subtitle>
-        <mat-icon style="font-size: 50px;" aria-hidden="false" aria-label="Agregar Cliente">person_add</mat-icon>
+
+        <mat-card-title>Nuevo Usuario</mat-card-title>
+        <mat-card-subtitle>Registrarse</mat-card-subtitle>
     </mat-card-header>
 
     <div class="mat-elevation-z8 basic-container">
-
 
         <form [formGroup]="formAgregarUsuario">
             <!-- Datos del usuario -->
             <mat-grid-list cols="2" rowHeight="100px" gutterSize="50px">
                 <mat-grid-tile>
                     <mat-form-field>
-                        <input matInput placeholder="Nombre" type="text" formControlName="name"> 
+                        <input matInput placeholder="Nombre" type="text" formControlName="name">
                         <mat-error *ngIf="hasError('name', 'required')">
                             Ingrese el nombre
                         </mat-error>
@@ -34,12 +35,13 @@
                     <mat-form-field>
                         <input matInput placeholder="Email" type="email" formControlName="email">
                         <mat-error *ngIf="hasError('email', 'required')">
-                           Ingrese el correo
+                            Ingrese el correo
                         </mat-error>
                     </mat-form-field>
                 </mat-grid-tile>
             </mat-grid-list>
             <mat-grid-list cols="2" rowHeight="100px" gutterSize="50px">
+
                 <mat-grid-tile>
                     <mat-form-field>
                         <input matInput placeholder="Contraseña" type="password" formControlName="password">
@@ -48,53 +50,110 @@
                         </mat-error>
                     </mat-form-field>
                 </mat-grid-tile>
+
                 <mat-grid-tile>
                     <mat-form-field>
-                        <input matInput placeholder="Confirmar contraseña" type="password" >
+                        <input matInput placeholder="Confirmar contraseña" type="password">
                         <mat-error *ngIf="hasError('apellido', 'required')">
                             Ingrese la contraseña
                         </mat-error>
                     </mat-form-field>
                 </mat-grid-tile>
             </mat-grid-list>
-
-            <!-- Agregar cuenta -->
-
-            <mat-grid-list cols="2" rowHeight="100px" gutterSize="50px">
-                <mat-grid-tile>
-                    <mat-card  style="width: 100%; padding: 0px!important;">
-                        <mat-card-header style="background-color: rgba(0, 0, 0, 0.10); ">
-                            <mat-card-title style="margin-top: 10px;">Cuentas</mat-card-title>
-                            <span class="toolbar-spacer"></span>
-                            <button mat-button (click)="agregarCuenta()">
-                                <mat-icon aria-label="Agregar" aria-hidden="false">add</mat-icon>
-                            </button>
-                        </mat-card-header>
-
-                        <mat-card-content>
-                            <div style="margin: 15px;" *ngIf="cuentas.length == 0" fxLayout="row"
-                                fxLayoutAlign="center">
-                                Todavía no ha ingresado cuentas para este usuario.
-                            </div>
-                            <mat-list>
-                                <mat-list-item *ngFor="let c of cuentas">
-                                    <mat-icon mat-list-icon>house</mat-icon>
-                                    <h4 mat-line>{{c.balance}}</h4>
-                                    <button mat-icon-button (click)="editarCuenta(c)">
-                                        <mat-icon aria-label="Editar">edit</mat-icon>
-                                    </button>
-                                    <button mat-icon-button (click)="borrarCuenta(c)">
-                                        <mat-icon aria-label="Delete">delete</mat-icon>
-                                    </button>
-                                </mat-list-item>
-                            </mat-list>
-                        </mat-card-content>
-                    </mat-card>
-                </mat-grid-tile>
-            </mat-grid-list>
-
-
         </form>
-    </div>
 
+        <!-- Agregar cuenta -->
+
+        <mat-grid-list cols="2" rowHeight="2:1" gutterSize="50px">
+            <mat-grid-tile>
+                <mat-card class="mat-elevation-z8" style="width: 100%; padding: 0px!important; position:absolute; top: 0px;
+                    left: 0px; height: max-content; ">
+                    <mat-card-header
+                        style="color: rgba(0, 0, 0, 0.54); background-color: rgba(0, 0, 0, 0.10); position: relative;">
+                        <mat-card-title style="margin-top: 10px;">Cuentas</mat-card-title>
+
+                        <span class="toolbar-spacer"></span>
+
+                        <button mat-button (click)="agregarCuenta()">
+                            <mat-icon aria-label="Agregar" aria-hidden="false">add</mat-icon>
+                        </button>
+                    </mat-card-header>
+
+                    <mat-card-content
+                        style="background-color:  rgb(174, 0, 255); display: flex; align-items: center; justify-content: center; height: 100%;">
+                        <div style="margin: 15px;" *ngIf="cuentas.length == 0" fxLayout="row" fxLayoutAlign="center">
+                            Todavía no ha ingresado cuentas para este usuario.
+                        </div>
+
+                        <ng-container *ngIf="cuentas.length > 0 ">
+
+                            <section class="table-container mat-elevation-z8" tabindex="0">
+                                <table #table mat-table [dataSource]="dataSource" style="width: 100%;">
+                                    <!-- Balance Column -->
+                                    <ng-container matColumnDef="balance">
+                                        <th mat-header-cell *matHeaderCellDef> Balance </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.balance |
+                                            currency:'USD':'symbol'}}</td>
+                                    </ng-container>
+
+                                    <!-- Estado Column -->
+                                    <ng-container matColumnDef="isActive">
+                                        <th mat-header-cell *matHeaderCellDef> Estado de cuenta </th>
+                                        <td mat-cell *matCellDef="let element"> {{(element.isActive) ? "Activa":
+                                            "Inactiva" }}</td>
+                                    </ng-container>
+
+                                    <!-- Fecha Column -->
+                                    <ng-container matColumnDef="lastChangeDate">
+                                        <th mat-header-cell *matHeaderCellDef> Fecha de modificación </th>
+                                        <td mat-cell *matCellDef="let element"> {{element.lastChangeDate}}</td>
+                                    </ng-container>
+
+                                    <!-- Columna de acciones -->
+
+                                    <ng-container matColumnDef="actions">
+                                        <th mat-header-cell *matHeaderCellDef style="text-align: right;">
+                                            Acciones
+                                        </th>
+                                        <td mat-cell *matCellDef="let element ; let i = index"
+                                            style="text-align: right;">
+                                            <button mat-icon-button (click)="editarCuenta(element, i)">
+                                                <mat-icon aria-label="Edit">edit</mat-icon>
+                                            </button>
+                                            <button mat-icon-button (click)="borrarCuenta(element, i)">
+                                                <mat-icon aria-label="Delete">delete</mat-icon>
+                                            </button>
+                                        </td>
+                                    </ng-container>
+
+                                    <!-- ROWS -->
+                                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                </table>
+                            </section>
+                        </ng-container>
+
+
+
+                    </mat-card-content>
+
+
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+
+        <!-- Botones -->
+        <div fxLayout="row" >
+            <div style="display: flex; justify-content: flex-end;">
+
+                <button mat-raised-button [disabled]="!formAgregarUsuario.valid" (click)="agregarUsuario()"
+                style="background-color: #ffbb6b;"
+                     type="submit">Guardar</button>
+
+                <button style="margin-left: 5px;" mat-raised-button color="Accent"
+                    (click)="cancelar()">Cancelar</button>
+            </div>
+
+        </div>
+    </div>
 </mat-card>

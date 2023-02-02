@@ -10,26 +10,32 @@
   /*border: 1px solid rgb(101, 103, 101);*/
   padding: 10px;
   /*border-radius: 10px;*/
-    text-align: center;
-    font-size: larger;
+  text-align: center;
+  font-size: larger;
 }
 
 mat-form-field {
-  width:100%;
+  width: 100%;
 }
 
 .mat-button {
   background-color: #ffbb6b;
-  float: right;;
+  float: right;
 }
 
-.btn-align{
-    margin: 0;
-    width: 100%;
-    background-color: blue;
+.btn-align {
+  margin: 0;
+  width: 100%;
+  background-color: blue;
 }
 
-.shadow{
+.shadow {
   box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+}
+
+
+.golden-ratio {
+  width: calc((70% / 1.618));
+  height: 70%; 
 }

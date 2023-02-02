@@ -1,33 +1,30 @@
-<br>
+<div class="container">
 
-<div class="form-user shadow">
-   <br>
-   <mat-card-title>Iniciar sesión</mat-card-title>
-   <br>
-   <br>
-   <br>
-   <form [formGroup]="formLogin" (ngSubmit)="login()">
-      <mat-form-field appearance="fill">
-         <mat-label>Usuario</mat-label>
-         <input type="text" matInput formControlName="usuario">
-      </mat-form-field>
+   <div class="form-user shadow centered golden-ratio">
 
-      <mat-form-field appearance="fill">
-         <mat-label>Contraseña</mat-label>
-         <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-         </button>
-      </mat-form-field>
-      <div class="btn-align">
-         <button mat-button [disabled]="!formLogin.valid" type="submit">
-            Iniciar sesión
-         </button>
-      </div>
-   </form>
+      <mat-card-title>Iniciar sesión</mat-card-title>
+      <form class="" [formGroup]="formLogin" (ngSubmit)="login()">
+         <mat-form-field appearance="fill">
+            <mat-label>Usuario</mat-label>
+            <input type="text" matInput formControlName="usuario">
+         </mat-form-field>
+
+         <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+               [attr.aria-pressed]="hide">
+               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+         </mat-form-field>
+         <div class="btn-align">
+            <button mat-button [disabled]="!formLogin.valid" type="submit">
+               Iniciar sesión
+            </button>
+         </div>
+      </form>
+   </div>
+   <br>
+   <br>
+   <br>
 </div>
-<br>
-<br>
-<br>
-<br>

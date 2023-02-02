@@ -1,0 +1,31 @@
+@startuml
+
+
+skinparam style strictuml
+
+autonumber
+Actor User as U
+participant UsuariosComponent as UC
+participant UserAddComponent as UAC
+participant AgregarCuentasDialogComponent as ACDC
+participant DataService as DS
+participant HttpClient as HCli
+
+participant "Observable<HttpResponse<DataService>>" as Ob
+
+activate U
+activate UC
+?-> UC : ngOnInit()
+UC -> DS++ : getUser<IUser[ ]>(url : string)
+DS-> HCli++ : get<IUser[]>(url) 
+return Ob
+
+UC -> Ob++ : suscribe(res => void   (res       )
+deactivate UC
+U -> UC++ : consultar_usuarios
+U -> UC : agregar_usuario
+
+
+
+
+@enduml

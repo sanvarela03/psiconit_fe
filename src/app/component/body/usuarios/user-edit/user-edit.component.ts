@@ -11,12 +11,11 @@ import { Subscription } from 'rxjs';
 export class UserEditComponent implements OnInit, OnDestroy {
   private subParams: Subscription = new Subscription;
   usuario: IUser = {
-    id: 0,
     username: '',
     password: '',
     name: '',
     email: '',
-    account: [],
+    accounts: [],
   }
   constructor(
     private route: ActivatedRoute
@@ -26,8 +25,8 @@ export class UserEditComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subParams = this.route.params.subscribe(
       params => {
-        this.usuario.id = params['id'];
-        console.log('Editar el usuario con id', this.usuario.id)
+        this.usuario.username= params['username'];
+        console.log('Editar el usuario con id', this.usuario.username)
       }
     )
   }
